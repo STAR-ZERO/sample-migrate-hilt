@@ -1,11 +1,11 @@
 package com.star_zero.migrate_hilt.feature.ui
 
 import android.util.Log
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.star_zero.migrate_hilt.core.repository.SampleRepository
-import javax.inject.Inject
 
-class FeatureViewModel @Inject constructor(
+class FeatureViewModel @ViewModelInject constructor(
     private val repository: SampleRepository
 ): ViewModel() {
 
