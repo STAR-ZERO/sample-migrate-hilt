@@ -5,6 +5,7 @@ import com.star_zero.migrate_hilt.core.api.SampleAPI
 import com.star_zero.migrate_hilt.core.util.AppConfig
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
@@ -13,7 +14,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAPI(context: Context, appConfig: AppConfig): SampleAPI {
+    fun provideAPI(@ApplicationContext context: Context, appConfig: AppConfig): SampleAPI {
         if (appConfig.debug) {
             // do something
         }
