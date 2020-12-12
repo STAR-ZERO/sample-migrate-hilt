@@ -4,19 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.star_zero.migrate_hilt.R
 import com.star_zero.migrate_hilt.feature.ui.FeatureActivity
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class FooFragment : DaggerFragment(R.layout.fragment_foo) {
+@AndroidEntryPoint
+class FooFragment : Fragment(R.layout.fragment_foo) {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    private val viewModel: FooViewModel by viewModels { viewModelFactory }
+    private val viewModel: FooViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

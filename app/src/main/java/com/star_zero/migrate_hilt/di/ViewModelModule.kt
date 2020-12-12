@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.star_zero.migrate_hilt.core.di.ViewModelKey
 import com.star_zero.migrate_hilt.core.viewmodel.ViewModelFactory
-import com.star_zero.migrate_hilt.ui.foo.FooViewModel
 import com.star_zero.migrate_hilt.ui.main.MainViewModel
 import dagger.Binds
 import dagger.Module
@@ -20,9 +19,4 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(FooViewModel::class)
-    abstract fun bindFooViewModel(viewModel: FooViewModel): ViewModel
 }
