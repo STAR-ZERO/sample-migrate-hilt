@@ -11,10 +11,7 @@ import dagger.android.support.DaggerApplication
 class App : DaggerApplication(), FeatureComponentProvider {
 
     private val appComponent: AppComponent by lazy {
-        DaggerAppComponent.factory().create(
-            this,
-            AppConfig(BuildConfig.DEBUG)
-        )
+        DaggerAppComponent.factory().create(this)
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
@@ -23,5 +20,9 @@ class App : DaggerApplication(), FeatureComponentProvider {
 
     override fun provideFeatureComponent(): FeatureComponent {
         return appComponent.featureComponent().create()
+    }
+
+    fun getAppConfig(): AppConfig {
+        return AppConfig(BuildConfig.DEBUG)
     }
 }
