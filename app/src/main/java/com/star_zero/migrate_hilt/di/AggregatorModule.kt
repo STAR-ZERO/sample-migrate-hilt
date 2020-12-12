@@ -13,8 +13,6 @@ import dagger.hilt.components.SingletonComponent
         NetworkModule::class,
         AppConfigModule::class,
         AppModule::class,
-        ActivityModule::class,
-        ViewModelModule::class,
     ]
 )
 interface AggregatorModule
